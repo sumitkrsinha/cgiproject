@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container form-cont">
+        <div class="first">
+            <h3>Add Values</h3>
+            <div class="links">
+                <a href="delete.html">Delete</a>
+                <a href="update.html">Edit</a>
+                <a href="dashboard.html">D.board</a>
+            </div>
+        </div>
+        <form action="cgi-bin/insert.py" method="POST">
+            <input type="number" class="form-control" name="rno" placeholder="Enter Roll_no"><br />
+            <input type="text" class="form-control" name="name" placeholder="Enter Name"><br />
+            <input type="number" class="form-control" name="marks" placeholder="Enter Marks"><br />
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

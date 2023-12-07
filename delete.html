@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container form-cont">
+        <div class="first">
+            <h3>Delete Values</h3>
+            <div class="links">
+                <a href="add.html">Add</a>
+                <a href="update.html">Edit</a>
+                <a href="dashboard.html">D.board</a>
+            </div>
+        </div>
+        <form action="cgi-bin/delete.py" method="DELETE">
+            <input type="number" class="form-control" name="rno" placeholder="Enter Roll_no"><br />
+            <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="first">
+            <div class="heading"><h3>Welcome to the Dashboard</h3></div>
+            <div class="links">
+                <a href="add.html">Add</a>
+                <a href="update.html">Edit</a>
+                <a href="delete.html">Delete</a>
+            </div>
+        </div>    
+        <div class="container mt-5">
+            <h1>Data Table</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Roll_no</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+        
+    </div>
+    <script>
+        // Fetch data using JavaScript
+        fetch('cgi-bin/fetch_data.py')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('tableBody');
+    
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td>${row.Roll_no}</td><td>${row.Name}</td><td>${row.Marks}</td>`;
+                    tableBody.appendChild(tr);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

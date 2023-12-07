@@ -1,0 +1,30 @@
+/* .dashboard-container{
+    height: 100vh;
+} */
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+}
+a{
+    text-decoration: none;
+    font-size: large;
+    /* color: black; */
+}
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.form-cont{
+    margin-top: 30px;
+    width: 40%;
+}
+.heading{
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
