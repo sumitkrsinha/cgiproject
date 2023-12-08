@@ -35,6 +35,7 @@
 
 - Locate the terminal to "cgi-bin" directory and the run "python create_table.py" to initialize the database and for table creation.
 - Set permission so that CGI scripts have executable permission. Run the following commands:
+
       #### chmod +x cgi-bin/registration.cgi
       #### chmod +x cgi-bin/login.cgi
       #### chmod +x cgi-bin/dashboard.cgi
