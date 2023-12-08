@@ -1,5 +1,6 @@
-/* .dashboard-container{
+/* dashboard-container{
     height: 100vh;
+    background-color: blue;
 } */
 .links{
     display: flex;
@@ -10,12 +11,15 @@
 a{
     text-decoration: none;
     font-size: large;
-    /* color: black; */
+    color: black;
+    /* background-color: brown; */
 }
+
 .first{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* background-color: blue; */
 }
 .form-cont{
     margin-top: 30px;
