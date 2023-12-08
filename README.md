@@ -33,8 +33,9 @@
 
 ## How to run the Project
 
-- Create SQLITE database
+- Locate the terminal to "cgi-bin" directory and the run "python create_table.py" to initialize the database and for table creation.
 - Set permission so that CGI scripts have executable permission
+-- run
 - Run web server to run CGI scripts using "python -m http.server 8000 --cgi"
 - Access website at localhost:8000
 
