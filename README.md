@@ -13,22 +13,22 @@
 
 #### Screenshots
 
-![Alt text](./images/registration.png)
+![Alt text](./images/registration.jpg)
 
 
-![Alt text](./images/Login.png)
+![Alt text](./images/Login.jpg)
 
 
-![Alt text](./images/dashboard.png)
+![Alt text](./images/dashboard.jpg)
 
 
-![Alt text](./images/add.png)
+![Alt text](./images/add.jpg)
 
 
-![Alt text](./images/edit.png)
+![Alt text](./images/edit.jpg)
 
 
-![Alt text](./images/delete.png)
+![Alt text](./images/delete.jpg)
 
 
 ## How to run the Project
