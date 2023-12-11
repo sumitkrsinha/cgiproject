@@ -22,6 +22,7 @@ if user:
        <html>
        <body>
        <script>
+       document.cookie = "username={username}";
        window.location.href = '/dashboard.html';
        </script>
        </body>

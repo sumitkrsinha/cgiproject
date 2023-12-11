@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Dashboard</title>
 </head>
-<body>
+
+<body class="background">
     <div class="dashboard-container">
         <div class="first">
-            <div class="heading"><h3>Welcome to the Dashboard</h3></div>
+            <div class="heading">
+                <h3>Welcome to the Dashboard</h3>
+            </div>
             <div class="links">
-                <a href="add.html" class="anchor" >Add</a>
+                <a href="add.html" class="anchor">Add</a>
                 <a href="update.html" class="anchor">Edit</a>
                 <a href="delete.html" class="anchor">Delete</a>
                 <!-- <button>Add</button> -->
             </div>
-        </div>    
+        </div>
         <div class="container mt-5">
-            <h1>Data Table</h1>
+            <div class="user-info container">
+                <p id="username"></p>
+                <a href="#" id="logout" onclick="logout()">Logout</a>
+                <a href="stats.html" id="stats" onclick="stats()">Stats</a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -31,22 +39,45 @@
                 <tbody id="tableBody"></tbody>
             </table>
         </div>
-        
+
     </div>
     <script>
-        // Fetch data using JavaScript
+        
         fetch('cgi-bin/fetch_data.py')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('tableBody');
-    
+
                 data.forEach(row => {
                     const tr = document.createElement('tr');
                     tr.innerHTML = `<td>${row.Roll_no}</td><td>${row.Name}</td><td>${row.Marks}</td>`;
                     tableBody.appendChild(tr);
                 });
+
+                // to fetch the username from the cookie
+            const usernameCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('username='));
+            console.log(usernameCookie);
+            
+            if (usernameCookie) {
+                const username = usernameCookie.split('=')[1];
+                // to display the username
+                document.getElementById('username').innerText = `Welcome, ${username}`;
+            }
             })
             .catch(error => console.error('Error:', error));
+
+        function logout() {
+            document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            window.location.href = '/login.html';
+        }
+
+        function stats() {
+            
+            window.location.href = '/stats.html';
+        }
+
+        
     </script>
 </body>
+
 </html>

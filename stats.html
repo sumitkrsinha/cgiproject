@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>stats</title>
+</head>
+<body class="bg-dark background">
+    <div class="stats-board">
+        <div class="user-info container links">
+            <p id="username"></p>
+            <a href="#" id="logout"  onclick="logout()">Logout</a>
+            <a href="dashboard.html" id="stats" onclick="stats()">D.board</a>
+        </div>
+        <div class="container mt-5">
+            <h4 class="highest-scorer">Highest-Scorer</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Roll_no</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>  
+        <div class="container mt-5">
+            <h4>Average Marks</h4>
+            <p id="averageMarks"></p>
+        </div>
+
+        <div class="container mt-5">
+            <h4>Total Entries</h4>
+            <p id="totalEntries"></p>
+        </div>  
+    </div>
+    <script>
+
+        fetch('cgi-bin/stats.py')
+            .then(response => response.json())
+            .then(data => {
+                
+                const tableBody = document.getElementById('tableBody');
+                data.highestScorer.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td>${row.Roll_no}</td><td>${row.Name}</td><td>${row.Marks}</td>`;
+                    tableBody.appendChild(tr);
+                });
+
+                
+                document.getElementById('averageMarks').innerText = `Average Marks: ${data.averageMarks}`;
+
+                
+                document.getElementById('totalEntries').innerText = `Total Entries: ${data.totalEntries}`;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>

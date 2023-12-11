@@ -2,6 +2,11 @@
     height: 100vh;
     background-color: blue;
 } */
+.background{
+    background-color: #343541;
+    color: antiquewhite;
+    /* height: 100vh; */
+}
 .links{
     display: flex;
     align-items: center;
@@ -11,7 +16,7 @@
 a{
     text-decoration: none;
     font-size: large;
-    color: black;
+    /* color: #fff; */
     /* background-color: brown; */
 }
 
@@ -32,3 +37,13 @@ a{
     align-items: center;
     width: 50%;
 }
+
+.user-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* .stats-nav{
+    width: 100%;
+} */

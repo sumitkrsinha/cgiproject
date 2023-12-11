@@ -22,8 +22,8 @@ else:
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles.css">
     </head>
-    <body>
-    <div class="container form-cont">
+    <body class="bg-dark">
+    <div class="container form-cont bg-light p-5">
     <div class="first">
     <h3>Edit Values</h3>
     <div class="links">
