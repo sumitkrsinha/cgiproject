@@ -5,7 +5,7 @@ conn=sqlite3.connect("./school.db")
 cur=conn.cursor()
 
 form=cgi.FieldStorage()
-roll_no = form.getvalue("rno")
+roll_no = form.getvalue("rollno")
 query="delete from details where Roll_no="+roll_no
 
 try:

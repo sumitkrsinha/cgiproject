@@ -29,7 +29,14 @@ if user:
        </html>'''
     print(html)
 else:
-    print(f"Login failed. Invalid credentials.\r\n")
+    query1 = f"SELECT * FROM users WHERE username='{username}'"
+    cur.execute(query1)
+    registered = cur.fetchone()
+    if registered:
+        print(f"Login failed. Invalid credentials.\r\n")
+    else:
+        print(f"Login failed. User Does Not Exist.\r\n")
+
 
 # Close database connection
 conn.close()

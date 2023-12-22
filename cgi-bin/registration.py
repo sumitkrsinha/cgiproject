@@ -12,14 +12,22 @@ form = cgi.FieldStorage()
 username = form.getvalue("username")
 password = form.getvalue("password")
 
-# Insert new user into the database
-query = f"INSERT INTO users (username, password) VALUES ('{username}', '{password}')"
-try:
-    cur.execute(query)
-    conn.commit()
-    print("<p>Registration successful. You can now <a href='login.html'>login</a>.</p>")
-except Exception as e:
-    print(f"<p>Registration failed. Error: {e}</p>")
+query = f"SELECT * FROM users WHERE username='{username}'"
+cur.execute(query)
+user = cur.fetchone()
+
+if user:
+     print(f"User Already Exist.\r\n")
+else:     
+    # Insert new user into the database
+    query = f"INSERT INTO users (username, password) VALUES ('{username}', '{password}')"
+
+    try:
+        cur.execute(query)
+        conn.commit()
+        print("<p>Registration successful. You can now <a href='login.html'>login</a>.</p>")
+    except Exception as e:
+        print(f"<p>Registration failed. Error: {e}</p>")
 
 # Close database connection
 conn.close()

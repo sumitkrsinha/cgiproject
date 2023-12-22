@@ -34,6 +34,7 @@
                         <th>Roll_no</th>
                         <th>Name</th>
                         <th>Marks</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody"></tbody>
@@ -50,7 +51,10 @@
 
                 data.forEach(row => {
                     const tr = document.createElement('tr');
-                    tr.innerHTML = `<td>${row.Roll_no}</td><td>${row.Name}</td><td>${row.Marks}</td>`;
+                    tr.innerHTML = `<td>${row.Roll_no}</td><td>${row.Name}</td><td>${row.Marks}</td><td>
+                                <button class="btn btn-primary" onclick="edit()">Edit</button>
+                                <button class="btn btn-primary" onclick="confirmDelete(${row.Roll_no})">Delete</button>
+                            </td>`;
                     tableBody.appendChild(tr);
                 });
 
@@ -71,10 +75,17 @@
             window.location.href = '/login.html';
         }
 
-        function stats() {
-            
+        function stats() {            
             window.location.href = '/stats.html';
         }
+
+        function edit() {            
+            window.location.href = '/update.html';
+        }
+
+        function confirmDelete(rollNo) {
+            window.location.href = `/delete.html?rollNo=${rollNo}`;
+            }
 
         
     </script>
